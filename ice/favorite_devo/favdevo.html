@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Favorite Devotionals</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-image">
+        <h1>My Favorite<br>Devotionals</h1>
+      </div>
+    </header>
+    <main>
+      <div class="content-box">
+        <h2>Favorite Devotionals</h2>
+
+<table class="devo-table">
+  <thead>
+    <tr>
+      <th>Speaker</th>
+      <th>Title</th>
+      <th>Location</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jeffrey R. Holland</td>
+      <td>Fear Not: Believe Only!</td>
+      <td>BYU</td>
+      <td>2015</td>
+    </tr>
+    <tr>
+      <td>Dieter F. Uchtdorf</td>
+      <td>Your Great Adventure</td>
+      <td>BYU-Idaho</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <td>David A. Bednar</td>
+      <td>Things as They Really Are</td>
+      <td>BYU</td>
+      <td>2017</td>
+    </tr>
+  </tbody>
+</table>
+
+<section class="quote-box">
+  <h2>Favorite Quote</h2>
+  <blockquote>
+    “Be strong. Live the gospel faithfully even if others around you don’t live it at all.”
+    <br>
+    — Jeffrey R. Holland
+  </blockquote>
+</section>
+
+<h2>Add a New Devotional</h2>
+
+<form class="devo-form">
+  <label for="speaker">Speaker</label>
+  <input type="text" id="speaker" name="speaker">
+
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title">
+
+  <label for="location">Location</label>
+  <input type="text" id="location" name="location">
+
+  <label for="year">Year</label>
+  <input type="number" id="year" name="year">
+
+  <button type="submit">Add Devotional</button>
+</form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Feed Sign Up</title>
+
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: rgb(120, 96, 64);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    #formContainer {
+      width: 680px;
+      margin: 30px auto;
+      background: white;
+      border: 12px solid #0b3b8f;
+      border-radius: 45px;
+      overflow: hidden;
+    }
+
+    .hero {
+      height: 280px;
+      position: relative;
+    }
+
+    .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    }
+
+    #closeBtn {
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      font-size: 1.4rem;
+      padding: 2px 10px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 35px;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+    }
+
+    .hero h1 {
+      font-size: 3.3rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    form {
+      width: 85%;
+      margin: 0 auto;
+      padding: 30px 0;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      height: 35px;
+      font-size: 1.2rem;
+    }
+
+    .checkbox-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 25px 0;
+    }
+
+    .submit-row {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    button[type="submit"] {
+      font-size: 1.2rem;
+      padding: 4px 12px;
+    }
+
+    .books {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 120px;
+    }
+
+    .books img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-right: 5px solid white;
+    }
+
+    .books img:first-child {
+      border-bottom-left-radius: 28px;
+    }
+
+    .books img:last-child {
+      border-right: none;
+      border-bottom-right-radius: 28px;
+    }
+
+    #output {
+      display: none;
+      width: 680px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="formContainer">
+
+    <div class="hero">
+      <img src="images/jesus_feeds_5000.jpeg" alt="Jesus feeding the multitude" class="hero-image">
+
+      <button type="button" id="closeBtn">X</button>
+
+      <div class="hero-content">
+        <h1>Daily Feed</h1>
+        <h2>Scripture a Day</h2>
+      </div>
+    </div>
+
+    <form id="myForm">
+      <h3>Sign Up for Daily Scripture Feed</h3>
+
+      <div class="form-row">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-row">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-row">
+        <label>Gender:</label>
+        <div>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="female" required>
+          <label for="female">Female</label>
+        </div>
+      </div>
+
+      <section class="checkbox-row">
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Subscribe to newsletter</label>
+      </section>
+
+      <section class="checkbox-row">
+        <input type="checkbox" id="conditions" name="conditions" required>
+        <label for="conditions">I acknowledge the terms and conditions</label>
+      </section>
+
+      <section class="submit-row">
+        <button type="submit">Submit</button>
+      </section>
+    </form>
+
+    <div class="books">
+      <img src="images/old_testament.webp" alt="Old Testament">
+      <img src="images/new_testament.webp" alt="New Testament">
+      <img src="images/book_of_mormon.webp" alt="Book of Mormon">
+      <img src="images/doctrine_and_covenants.webp" alt="Doctrine and Covenants">
+      <img src="images/pearl_of_great_price.webp" alt="Pearl of Great Price">
+    </div>
+
+  </div>
+
+  <div id="output"></div>
+
+  <script>
+    document.getElementById("closeBtn").addEventListener("click", function () {
+      document.getElementById("formContainer").style.display = "none";
+    });
+
+    const form = document.getElementById("myForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const entries = [];
+
+      for (const [key, value] of formData.entries()) {
+        if (key == "password") {
+          entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+        } else {
+          entries.push(`<strong>${key}</strong>: ${value}`);
+        }
+      }
+
+      output.style.display = "block";
+
+      output.innerHTML = `
+        <h3>Here is the data that would be sent to the server:</h3>
+        <ul>
+          ${entries.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+      `;
+    });
+  </script>
+</body>
+</html>

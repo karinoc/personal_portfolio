@@ -1,0 +1,358 @@
+:root {
+    --primary: #dad7cd;
+    --secondary: #a3b18a;
+    --accent1: #588157;
+    --accent2: #344e41;
+    --text: #333333;
+    --light-bg: #f7f5ef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lato, Helvetica, sans-serif;
+    color: var(--text);
+    background: white;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 30px;
+    display: grid;
+    grid-template-columns: 180px 1fr 220px;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.logo {
+    width: 180px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent2);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: var(--accent1);
+}
+
+header input {
+    padding: 11px;
+    border: 1px solid var(--primary);
+    border-radius: 2px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.breadcrumb {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "IM Fell French Canon SC", serif;
+    color: var(--accent2);
+}
+
+h1 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+    max-width: 560px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    gap: 45px;
+    align-items: start;
+
+    padding-bottom: 45px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+
+    display: block;
+}
+
+.hero-content {
+    padding-top: 5px;
+}
+
+.hero-content h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.hero-content p,
+.hero-content li {
+    line-height: 1.55;
+}
+
+.recipe-info {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0 28px;
+}
+
+.info-card {
+    width: 78px;
+    text-align: center;
+}
+
+.info-card svg {
+    width: 34px;
+    height: 34px;
+    color: var(--accent2);
+}
+
+.info-card h3 {
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.info-card p {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nutrition {
+    padding-left: 20px;
+}
+
+.nutrition li {
+    margin-bottom: 8px;
+}
+
+.recipe-section {
+    display: grid;
+    grid-template-columns: 1fr 1.75fr;
+    gap: 50px;
+    padding: 45px 0;
+    border-bottom: 2px solid var(--primary);
+}
+
+.recipe-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recipe-section svg {
+    color: var(--accent2);
+    width: 24px;
+    height: 24px;
+}
+
+.ingredients {
+    border-right: 1px solid var(--primary);
+    padding-right: 40px;
+}
+
+.ingredients ul {
+    padding-left: 22px;
+}
+
+.ingredients li {
+    margin-bottom: 12px;
+    line-height: 1.45;
+}
+
+.instructions ol {
+    list-style: none;
+    counter-reset: step;
+    padding-left: 0;
+}
+
+.instructions li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 42px;
+    margin-bottom: 18px;
+    line-height: 1.55;
+}
+
+.instructions li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent1);
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.share {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.share-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent2);
+    font-weight: bold;
+}
+
+.share-title svg {
+    width: 24px;
+    height: 24px;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: var(--accent2);
+    border: 1px solid var(--accent2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.socials a:hover {
+    background: var(--accent2);
+    color: white;
+}
+
+button {
+    padding: 12px 20px;
+    border: 2px solid var(--primary);
+    background: white;
+    color: var(--accent2);
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: var(--primary);
+}
+
+button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.tip {
+    background: var(--light-bg);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 20px 25px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.tip svg {
+    color: var(--accent2);
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.tip h3 {
+    margin-bottom: 6px;
+}
+
+.tip p {
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 900px) {
+    header,
+    .hero,
+    .recipe-section,
+    .share {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    header input {
+        width: 100%;
+    }
+
+    .hero img {
+        height: auto;
+    }
+
+    .ingredients {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .recipe-info {
+        justify-content: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+
+    button {
+        justify-self: center;
+    }
+}

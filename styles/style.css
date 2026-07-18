@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica+Headline:wght@400;500;600;700&family=Notable&display=swap');
+
+:root {
+    --primary: #22333B;
+    --secondary: #A9927D;
+    --dark: #0A0908;
+    --light: #F2F4F3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--light);
+    color: var(--dark);
+    font-family: "Finlandica Headline", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    padding: 20px 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+    margin-left: auto;
+    margin-right: 25px;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color .2s ease;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+.button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background .2s ease;
+}
+
+.button:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+#hero {
+    text-align: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    padding: 80px 20px;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: grayscale(100%);
+    opacity: 0.20;
+    z-index: 0;
+}
+
+#hero * {
+    position: relative;
+    z-index: 1;
+}
+
+.tagline {
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#hero h1 {
+    color: var(--primary);
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+#hero > p:not(.tagline) {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    margin: 0 10px;
+}
+
+#about {
+    text-align: center;
+}
+
+#about h2 {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+#about p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    transition: transform .2s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+}
+
+article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+article h3,
+article p,
+article a {
+    padding: 0 15px;
+}
+
+.category {
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+article h3 {
+    color: var(--primary);
+}
+
+article a {
+    display: inline-block;
+    margin-top: auto;
+    padding-bottom: 20px;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+article a:hover {
+    color: var(--secondary);
+}
+
+#reflection {
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 60px 30px;
+}
+
+blockquote {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+cite {
+    display: block;
+    margin-top: 20px;
+    color: var(--secondary);
+    font-style: normal;
+    font-weight: bold;
+}
+
+footer {
+    background: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.footer-logo {
+    height: 70px;
+    width: auto;
+}
+
+footer nav {
+    justify-content: center;
+}
+
+footer ul {
+    margin: 20px 0;
+}
+
+footer p {
+    color: var(--secondary);
+}
+
+/* ---------- Slideshow (Featured Dishes) ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+#featured-slideshow {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+#featured-slideshow h2 {
+  margin-bottom: 1rem;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   FORCE Recipes banner full width
+   (put this AFTER .slideshow-container styles)
+   ========================= */
+
+/* override the default slideshow-container max-width */
+.slideshow-container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* make the banner image fill the screen nicely */
+.slideshow-container .mySlides img {
+  width: 100%;
+  height: 520px;       /* adjust if you want taller/shorter */
+  object-fit: cover;
+}
+
+/* keep arrows on the edges */
+.slideshow-container .prev { left: 18px; }
+.slideshow-container .next { right: 18px; }
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Ensure images fill the slideshow nicely */
+.mySlides img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 18px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+  user-select: none;
+  background-color: rgba(0,0,0,0.25);
+  border-radius: 50%;
+  z-index: 10; /* ensures they appear on top */
+}
+
+/* Position left button fully to the left edge */
+.prev {
+  left: 10px;   /* â† adjust if you want more spacing */
+}
+
+/* Position right button fully to the right edge */
+.next {
+  right: 10px;  /* â† adjust if you want more spacing */
+}
+
+/* Hover effect */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+
+/* Caption text */
+.caption-text {
+  color: #f2f2f2;
+  font-size: 1rem;
+  padding: 10px 16px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    transparent
+  );
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Dots/bullets/indicators */
+.dots-wrapper {
+  margin-top: 0.75rem;
+}
+
+.dot {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.4s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fadeSlide;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeSlide {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        margin: 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons a {
+        display: block;
+        margin: 10px auto;
+        max-width: 220px;
+    }
+
+    #preview img {
+        height: 250px;
+    }
+}
+
+/* ---------- Client Report Page ---------- */
+.report-link {
+    font-weight: 700;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.report-main {
+    max-width: 1000px;
+    padding: 0 20px 40px;
+}
+
+.report-hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.report-hero h1 {
+    color: var(--primary);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin: 18px auto;
+    max-width: 850px;
+}
+
+.report-hero > p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.report-section {
+    background: white;
+    border-left: 6px solid var(--secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(10, 9, 8, 0.08);
+    margin: 0 0 35px;
+    padding: 42px;
+}
+
+.report-section h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light);
+}
+
+.report-section h3 {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin: 30px 0 8px;
+}
+
+.report-section p {
+    margin-top: 0;
+}
+
+.site-link a,
+.report-links a {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 11px 18px;
+    border-radius: 5px;
+}
+
+.site-link a:hover,
+.report-links a:hover {
+    background: var(--secondary);
+}
+
+.site-link {
+    margin-top: 28px !important;
+}
+
+.report-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+@media (max-width: 800px) {
+    .report-main {
+        padding: 0 12px 25px;
+    }
+
+    .report-hero {
+        padding-top: 55px;
+    }
+
+    .report-section {
+        padding: 28px 22px;
+    }
+
+    .report-links {
+        flex-direction: column;
+    }
+
+    .report-links a {
+        text-align: center;
+    }
+}

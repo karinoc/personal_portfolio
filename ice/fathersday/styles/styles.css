@@ -1,0 +1,91 @@
+/* Add your CSS here to style your father's day page */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f7e7c6;
+    color: #3b2414;
+}
+
+#wrapper {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff8ed;
+    border: 8px solid #8b4513;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px #5a321680;
+    overflow: hidden;
+}
+
+header {
+    background: #22333b;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    background: #d2691e;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+nav li:hover {
+    background: #a9927d;
+    transform: scale(1.08);
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #8b0000;
+    text-shadow: 2px 2px #f2c078;
+}
+
+img {
+    width: 80%;
+    max-width: 450px;
+    border: 6px solid #22333b;
+    border-radius: 18px;
+    margin: 20px 0;
+}
+
+section {
+    background: #f2f4f3;
+    margin: 25px auto;
+    padding: 20px;
+    border-left: 10px solid #d2691e;
+    border-radius: 12px;
+    text-align: left;
+}
+
+h2 {
+    color: #22333b;
+    border-bottom: 3px dashed #a9927d;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+footer {
+    background: #22333b;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-weight: bold;
+}

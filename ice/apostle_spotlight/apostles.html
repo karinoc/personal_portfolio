@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Apostles Spotlight</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #ECECED;
+            font-family: Arial, Helvetica, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+        }
+
+        .card {
+            width: 1100px;
+            padding: 25px;
+
+            border: 6px solid black;
+            border-radius: 40px;
+
+            background-image: url("images/christus.webp");
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .first-presidency {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .apostles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+
+            justify-items: center;
+
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .apostle img {
+            width: 140px;
+            height: 140px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+            border: 10px solid white;
+
+            transition: 0.3s ease;
+        }
+
+        .apostle img:hover {
+            border-color: gold;
+            transform: scale(1.05);
+        }
+
+        .oaks img {
+            width: 190px;
+            height: 190px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>First Presidency</h1>
+
+        <div class="first-presidency">
+
+            <div class="apostle">
+                <img src="images/eyring.webp" alt="Henry B. Eyring">
+            </div>
+
+            <div class="apostle oaks">
+                <img src="images/oaks.webp" alt="Dallin H. Oaks">
+            </div>
+
+            <div class="apostle">
+                <img src="images/christofferson.webp" alt="D. Todd Christofferson">
+            </div>
+
+        </div>
+
+        <h2>Quorum of the Twelve Apostles</h2>
+
+        <div class="apostles-grid">
+
+            <div class="apostle">
+                <img src="images/uchtdorf.webp" alt="Dieter F. Uchtdorf">
+            </div>
+
+            <div class="apostle">
+                <img src="images/bednar.webp" alt="David A. Bednar">
+            </div>
+
+            <div class="apostle">
+                <img src="images/cook.webp" alt="D. Todd Cook">
+            </div>
+
+            <div class="apostle">
+                <img src="images/christofferson.webp" alt="D. Todd Christofferson">
+            </div>
+
+            <div class="apostle">
+                <img src="images/rasband.webp" alt="David A. Rasband">
+            </div>
+
+            <div class="apostle">
+                <img src="images/anderson.webp" alt="Craig C. Anderson">
+            </div>
+
+            <div class="apostle">
+                <img src="images/kearon.webp" alt="David A. Kearn">
+            </div>
+
+            <div class="apostle">
+                <img src="images/gong.webp" alt="D. Todd Gong">
+            </div>
+
+            <div class="apostle">
+                <img src="images/soares.webp" alt="D. Todd Soares">
+            </div>
+
+            <div class="apostle">
+                <img src="images/stevenson.webp" alt="D. Todd Stevenson">
+            </div>
+
+            <div class="apostle">
+                <img src="images/causse.webp" alt="D. Todd Causse">
+            </div>
+
+            <div class="apostle">
+                <img src="images/renlund.webp" alt="D. Todd Renlund">
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
